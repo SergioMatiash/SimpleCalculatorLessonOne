@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SimpleCalculatorLessonOne</string>
+
+
+    <string name="btn_one_value">1</string>
+    <string name="btn_two_value">2</string>
+    <string name="btn_three_value">3</string>
+
+    <string name="btn_four_value">4</string>
+    <string name="btn_five_value">5</string>
+    <string name="btn_six_value">6</string>
+
+    <string name="btn_seven_value">7</string>
+    <string name="btn_eight_value">8</string>
+    <string name="btn_nine_value">9</string>
+
+    <string name="btn_clear">Clear</string>
+
+
+</resources>

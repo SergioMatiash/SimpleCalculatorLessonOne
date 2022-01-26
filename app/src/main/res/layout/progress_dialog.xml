@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <soup.neumorphism.NeumorphImageView
+
+        android:id="@+id/iv_progress_background"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@drawable/background_progress_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </soup.neumorphism.NeumorphImageView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/additional_bar"
+        android:layout_width="210dp"
+        android:layout_height="113dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_progress_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.878" />
+
+    <soup.neumorphism.NeumorphTextView
+
+        android:id="@+id/tv_progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="Loading..."
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/current_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_progress_background" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/current_progress_bar"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:progress="80"
+        android:progressDrawable="@drawable/background_progress_bar_second"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_progress_background" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
