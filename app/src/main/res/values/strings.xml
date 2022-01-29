@@ -17,4 +17,10 @@
     <string name="btn_clear">Clear</string>
 
 
+    <string name="btn_addition">+</string>
+    <string name="btn_substract">-</string>
+
+    <string name="calculator">Calculator</string>
+    <string name="equals"> Equals</string>
+
 </resources>

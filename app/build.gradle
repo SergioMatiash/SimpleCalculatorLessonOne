@@ -44,4 +44,14 @@ dependencies {
     implementation 'com.github.fornewid:neumorphism:0.3.0'
 
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //calligraphy
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    //for clear button animation
+    implementation 'me.spark:submitbutton:1.0.1'
+
+    //toggle animation
+    implementation "com.airbnb.android:lottie:3.4.0"
+    implementation 'com.jackandphantom.android:customtogglebutton:1.0.1'
 }
