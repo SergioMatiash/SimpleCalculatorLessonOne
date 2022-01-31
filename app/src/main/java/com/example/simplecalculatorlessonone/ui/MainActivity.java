@@ -41,13 +41,15 @@ public class MainActivity extends AppCompatActivity {
 
     int [] functions = new int[] {
             R.id.btn_addition,
-            R.id.btn_clear,
+            R.id.btn_substract,
             R.id.btn_equals,
-            R.id.btn_substract
+
 
     };
 
-
+    int [] technicalbuttons = new int[] {
+            R.id.btn_clear
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,24 +58,41 @@ public class MainActivity extends AppCompatActivity {
 
         //view finding
         Button add_multiply = findViewById(R.id.btn_addition);
-        Button substract_divide = findViewById(R.id.btn_substract);
+        Button subtract_divide = findViewById(R.id.btn_substract);
         screenResult = findViewById(R.id.tv_result);
-        calculatorlogic = new CalculatorLogic();
         CustomToggle lottieCheckedButton = (CustomToggle)  findViewById(R.id.lot_toggle_changer_function);
 
+
+        calculatorlogic = new CalculatorLogic();
+
+
         //setting click listeners
+
+
 
         View.OnClickListener numberPressedListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                calculatorlogic.onNumberPressed(v.getId());
+                screenResult.setText(calculatorlogic.getText());
             }
         };
 
         View.OnClickListener functionPressedListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                calculatorlogic.onActionPressed(v.getId());
+                screenResult.setText(calculatorlogic.getText());
 
+            }
+        };
+
+        View.OnClickListener clearPressListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                calculatorlogic.onClearPressed(v.getId());
+                screenResult.setText(calculatorlogic.getText());
             }
         };
 
@@ -88,6 +107,11 @@ public class MainActivity extends AppCompatActivity {
             findViewById(functionId).setOnClickListener(functionPressedListener);
         }
 
+        for (int techincalId:technicalbuttons
+             ) {
+            findViewById(techincalId).setOnClickListener(clearPressListener);
+        }
+
         //set up toggle button for changing button add/multiply and subtract/divide
 
 
@@ -96,35 +120,22 @@ public class MainActivity extends AppCompatActivity {
         lottieCheckedButton.setAnimationTime(700);
         lottieCheckedButton.setSlideColor(Color.GREEN);
         lottieCheckedButton.setOnToggleClickListener(new CustomToggle.OnToggleClickListener(){
+
             @Override
             public void onLefToggleEnabled(boolean enabled) {
-                substract_divide.setText("-");
+                subtract_divide.setText("-");
                 add_multiply.setText("+");
+
+
             }
 
             @Override
             public void onRightToggleEnabled(boolean enabled) {
-                substract_divide.setText("%");
+                subtract_divide.setText("%");
                 add_multiply.setText("*");
             }
 
 
-            /*@Override
-            public void onClick(View v) {
-                if (ischeckDone) {
-
-                    ischeckDone=false;
-
-
-
-
-                } else {
-
-
-                    ischeckDone=true;
-
-                }
-            }*/
         });
 
 

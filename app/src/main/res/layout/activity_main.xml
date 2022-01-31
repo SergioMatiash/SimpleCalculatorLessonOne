@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/background"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".ui.MainActivity">
 
     <soup.neumorphism.NeumorphTextView
@@ -12,8 +12,8 @@
 
         android:id="@+id/tv_result"
         style="@style/Widget.Neumorph.TextView"
-        android:layout_width="352dp"
-        android:layout_height="84dp"
+        android:layout_width="397dp"
+        android:layout_height="74dp"
         android:layout_marginTop="24dp"
         android:textAlignment="center"
         android:textColor="@color/pink_neon"
@@ -31,11 +31,15 @@
         android:layout_width="388dp"
         android:layout_height="270dp"
 
+        android:layout_marginTop="32dp"
+
+        android:layout_marginBottom="16dp"
         android:background="@color/background"
-        app:layout_constraintBottom_toTopOf="@+id/btn_clear"
+        app:layout_constraintBottom_toTopOf="@+id/cl_technical_btns"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result">
 
 
         <soup.neumorphism.NeumorphButton
@@ -165,101 +169,102 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.spark.submitbutton.SubmitButton
-        android:id="@+id/btn_clear"
+
+    <soup.neumorphism.NeumorphButton
+
+        android:id="@+id/btn_addition"
         style="@style/Widget.Neumorph.Button"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginTop="8dp"
-        android:background="@color/background"
-       android:text="@string/btn_clear"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_for_buttons" />
-
-    <com.spark.submitbutton.SubmitButton
-        android:id="@+id/btn_equals"
-        style="@style/Widget.Neumorph.Button"
-
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:background="@color/background"
-        android:text="@string/equals"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_for_buttons" />
-
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="218dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/font_main_sign"
-        android:text="@string/calculator"
-        android:textColor="@color/teal_700"
-        android:textSize="@dimen/_30sdp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="115dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btn_addition"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/tv_result" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="218dp"
-        android:layout_height="55dp"
+    <soup.neumorphism.NeumorphButton
+
+        android:id="@+id/btn_substract"
+        style="@style/Widget.Neumorph.Button"
+        android:layout_width="121dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/cl_for_buttons"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name">
+        android:text="@string/btn_substract"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result" />
 
-        <soup.neumorphism.NeumorphButton
-
-            android:id="@+id/btn_addition"
-            style="@style/Widget.Neumorph.Button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="@string/btn_addition"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <soup.neumorphism.NeumorphButton
-
-            android:id="@+id/btn_substract"
-            style="@style/Widget.Neumorph.Button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="@string/btn_substract"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.jackandphantom.customtogglebutton.CustomToggle
 
         android:id="@+id/lot_toggle_changer_function"
-        android:layout_width="71dp"
-        android:layout_height="69dp"
+        android:layout_width="57dp"
+        android:layout_height="58dp"
 
+        android:layout_marginStart="20dp"
+        app:ctg_addAnimationType="jack_animation"
         app:ctg_addLeftIcon="@drawable/ic_left_icon"
         app:ctg_addRightIcon="@drawable/ic_right_icon"
-        app:ctg_addSlideColor="#ff67"
         app:ctg_addSlideBackgroundColor="#6c817a"
-        app:ctg_addAnimationType="jack_animation"
 
-        app:layout_constraintBottom_toTopOf="@+id/cl_for_buttons"
+
+        app:ctg_addSlideColor="#ff67"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toEndOf="@+id/btn_substract"
         app:layout_constraintTop_toBottomOf="@+id/tv_result"
+        app:layout_constraintVertical_bias="0.846" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/cl_technical_btns"
+        android:layout_width="411dp"
+        android:layout_height="121dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.spark.submitbutton.SubmitButton
+            android:id="@+id/btn_clear"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:background="@color/background"
+            android:text="@string/btn_clear"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.spark.submitbutton.SubmitButton
+            android:id="@+id/btn_equals"
+            style="@style/Widget.Neumorph.Button"
+
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:background="@color/background"
+            android:text="@string/equals"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
-         />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="144dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="162dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
